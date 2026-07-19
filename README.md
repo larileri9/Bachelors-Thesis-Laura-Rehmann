@@ -2,6 +2,7 @@
 
 In this git are codes and more in depth per experiment results. I am curerntly still cleaning up and uploading codes + writing some explanations.
 
+.. working on it, will be added gradually in the two weeks after thesis deadline :( ...
 ## Repository structure
 
 ### [shorkie_modified](shorkie_modified)
