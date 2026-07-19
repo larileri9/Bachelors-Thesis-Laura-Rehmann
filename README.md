@@ -17,7 +17,7 @@ Scripts to launch all model trainings except chrombpnet. Chrombpnet needs to be 
 
 Scripts to evaulate all models except chrombpnet in either kfold or holdout setting. 
 
-### [additional_utils](additional_utils)
+### [codes/additional_utils](additional_utils)
 
 Chromosme embedding generation, ATACorrect ec.
 
