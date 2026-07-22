@@ -1,0 +1,16 @@
+{
+  "test": [
+    "VI"
+  ],
+  "valid": [
+    "VII"
+  ],
+  "train": [
+    "I",
+    "II",
+    "III",
+    "IV",
+    "V",
+    "VIII"
+  ]
+}

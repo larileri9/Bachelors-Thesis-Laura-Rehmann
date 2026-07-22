@@ -1,0 +1,10 @@
+species:
+  aspergillus_oryzae:
+    samples:
+      - SRR10403107
+      - SRR10403108
+    bowtie2_index: "/s/project/multispecies/fungi_code/atac/data/chrom_bp_pipeline/a_oryzae/data/input_files/index/index"
+    effective_genome_size: 37848727
+    fasta: "/s/project/multispecies/fungi_code/atac/data/chrom_bp_pipeline/a_oryzae/data/input_files/oryzae_right_chroms_gcf.fna"
+    folds: "/data/nasif12/home_if12/rehm/shorkie/atac-seq-pipeline/config/oryzae_individual_folds/fold_1.json"
+adapter_seq: "CTGTCTCTTATACACATCT" # Nextera adapter sequence

@@ -1,0 +1,48 @@
+species:
+  saccharomyces_cerevisiae:
+    samples: [GSM1621323, GSM1621324, GSM1621325, GSM1621326, GSM1621327, GSM1621328, GSM1621329, GSM1621330, GSM1621331, GSM1621332]
+    bowtie2_index: "/s/project/multispecies/fungi_code/atac/debug/schep/data/index/index"
+    effective_genome_size: 12157105
+    fasta: "/s/project/multispecies/fungi_code/atac/debug/schep/data/Saccharomyces_cerevisiae.R64-1-1.dna.toplevel.fa"
+    folds: "/data/nasif12/home_if12/rehm/shorkie/atac-seq-pipeline/config/whole_orgs/holdout/s_cerevisiae_cross_species.json"
+    peaks: "/s/project/multispecies/fungi_code/atac/data/benchmarking/chrombpnet_data/s_cerevisiae/params_2/models/chrombpnet/debug_il_1216_ol_608_nf_64_dl_7/fold_0/auxiliary/filtered.peaks.bed"
+    non_peaks: "/s/project/multispecies/fungi_code/atac/data/benchmarking/chrombpnet_data/s_cerevisiae/params_2/models/chrombpnet/debug_il_1216_ol_608_nf_64_dl_7/fold_0/auxiliary/filtered.nonpeaks.bed"
+
+  schizosaccharomyces_pombe:
+    samples: [SRR1822148, SRR1822149, SRR1822150, SRR1822151, SRR1822152]
+    bowtie2_index: "/s/project/multispecies/fungi_code/atac/data/chrom_bp_pipeline/pombe/input_files/index/index"
+    effective_genome_size: 12591209
+    fasta: "/s/project/multispecies/fungi_code/atac/cross_species_benchmark/chrom_bp_pipeline/pombe/input_files/ASM294v3_right_chroms.fna"
+    folds: "/data/nasif12/home_if12/rehm/shorkie/atac-seq-pipeline/config/whole_orgs/holdout/s_pombe_cross_species.json"
+    peaks: "/s/project/multispecies/fungi_code/atac/data/benchmarking/chrombpnet_data/s_pombe/params_2/models/chrombpnet/debug_il_1216_ol_608_nf_64_dl_7/fold_0/auxiliary/filtered.peaks.bed"
+    non_peaks: "/s/project/multispecies/fungi_code/atac/data/benchmarking/chrombpnet_data/s_pombe/params_2/models/chrombpnet/debug_il_1216_ol_608_nf_64_dl_7/fold_0/auxiliary/filtered.nonpeaks.bed"
+
+  candida_albicans:
+    samples: [SRR12487669, SRR12487670, SRR12487671]
+    bowtie2_index: "/s/project/multispecies/fungi_code/atac/data/chrom_bp_pipeline/c_albicans/data/input_data/index/index"
+    effective_genome_size: 14282666
+    fasta: "/s/project/multispecies/fungi_code/atac/cross_species_benchmark/chrom_bp_pipeline/c_albicans/data/input_data/GCF_000182965.3_ASM18296v3_genomic.fna"
+    folds: "/data/nasif12/home_if12/rehm/shorkie/atac-seq-pipeline/config/whole_orgs/holdout/c_albicans_cross_species.json"
+    peaks: "/s/project/multispecies/fungi_code/atac/data/benchmarking/chrombpnet_data/c_albicans/params_2/models/chrombpnet/debug_il_1216_ol_608_nf_64_dl_7/fold_0/auxiliary/filtered.peaks.bed"
+    non_peaks: "/s/project/multispecies/fungi_code/atac/data/benchmarking/chrombpnet_data/c_albicans/params_2/models/chrombpnet/debug_il_1216_ol_608_nf_64_dl_7/fold_0/auxiliary/filtered.nonpeaks.bed"
+
+  aspergillus_niger:
+    samples: [SRR10193421, SRR10193422]
+    bowtie2_index: "/s/project/multispecies/fungi_code/atac/data/chrom_bp_pipeline/a_niger/data/input_files/index/index"
+    effective_genome_size: 33975768
+    fasta: "/s/project/multispecies/fungi_code/atac/cross_species_benchmark/chrom_bp_pipeline/a_niger/data/input_files/a_niger_right_scaffolds_gcf.fna"
+    folds: "/data/nasif12/home_if12/rehm/shorkie/atac-seq-pipeline/config/whole_orgs/holdout/a_niger_cross_species.json"
+    peaks: "/s/project/multispecies/fungi_code/atac/data/benchmarking/chrombpnet_data/a_niger/params_2/models/chrombpnet/debug_il_1216_ol_608_nf_64_dl_7/fold_0/auxiliary/filtered.peaks.bed"
+    non_peaks: "/s/project/multispecies/fungi_code/atac/data/benchmarking/chrombpnet_data/a_niger/params_2/models/chrombpnet/debug_il_1216_ol_608_nf_64_dl_7/fold_0/auxiliary/filtered.nonpeaks.bed"
+
+  neurasposa_crassa:
+    samples: [SRR12229299, SRR12229300]
+    bowtie2_index: "/s/project/multispecies/fungi_code/atac/data/chrom_bp_pipeline/n_crassa/data/input_files/index/index"
+    effective_genome_size: 40463072
+    fasta: "/s/project/multispecies/fungi_code/atac/cross_species_benchmark/chrom_bp_pipeline/n_crassa/data/input_files/n_crassa_right_chroms_gcf.fna"
+    folds: "/data/nasif12/home_if12/rehm/shorkie/atac-seq-pipeline/config/whole_orgs/holdout/n_crassa_cross_species.json"
+    peaks: "/s/project/multispecies/fungi_code/atac/data/benchmarking/chrombpnet_data/n_crassa/params_2/models/chrombpnet/debug_il_1216_ol_608_nf_64_dl_7/fold_0/auxiliary/filtered.peaks.bed"
+    non_peaks: "/s/project/multispecies/fungi_code/atac/data/benchmarking/chrombpnet_data/n_crassa/params_2/models/chrombpnet/debug_il_1216_ol_608_nf_64_dl_7/fold_0/auxiliary/filtered.nonpeaks.bed"
+
+
+adapter_seq: "CTGTCTCTTATACACATCT"

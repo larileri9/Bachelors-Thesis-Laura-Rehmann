@@ -1,0 +1,58 @@
+{
+    "model": {
+        "seq_length": 4096,
+        "activation": "gelu",
+        "norm_type": "batch",
+        "bn_momentum": 0.9,
+        "kernel_initializer": "lecun_normal",
+        "trunk": [
+            {
+                "name": "conv_dna",
+                "filters": 32,
+                "kernel_size": 11,
+                "norm_type": null,
+                "activation": "linear"
+            },
+            {
+                "name": "res_tower",
+                "filters_init": 32,
+                "filters_end": 64,
+                "divisible_by": 8,
+                "kernel_size": 5,
+                "num_convs": 2,
+                "dropout": 0.05,
+                "pool_size": 2,
+                "repeat": 3
+            },
+            {
+                "name": "transformer_tower",
+                "key_size": 16,
+                "heads": 2,
+                "num_position_features": 16,
+                "dropout": 0.1,
+                "kernel_initializer": "he_normal",
+                "repeat": 2
+            },
+            {
+                "name": "unet_conv",
+                "kernel_size": 3,
+                "upsample_conv": true
+            },
+            {
+                "name": "unet_conv",
+                "kernel_size": 3,
+                "upsample_conv": true
+            },
+            {
+                "name": "unet_conv",
+                "kernel_size": 3,
+                "upsample_conv": true
+            }
+        ],
+        "head_human": {
+            "name": "final",
+            "units": 4,
+            "activation": "linear"
+        }
+    }
+}
