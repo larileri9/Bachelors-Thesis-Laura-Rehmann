@@ -18,8 +18,8 @@ General information:
 
 Example scripts:
 
-- xxx.sh --> example script for training multispecies
-- xxx.sh --> example script for evaluating multispecies
+- mutispecies_array.sh --> example script for training multispecies 
+- run_m.sh --> example script for evaluating multispecies
 
 --> training and evaluation of single species is conducted through the launchers 
 
@@ -29,11 +29,13 @@ Configs:
 holdout_no_{species}.yaml --> multispecies without the one species mentioned in title (training) has the peaks and non peaks hardcoded
 holdout_singular.yaml --> used when one species is called for train or test, no explicit peaks encoded, those are given during training to the launcher (test doesn't need them)
 
+In whole_orgs/holdout: jsons for the fixed splits, loco splits are handled in launcher 
+
 
 Flag list:
 
 
-Flags I use:
+Flags I use / have adapted sometimes / are not fixed for every run I conducted:
 
 --pretrained (best model h5)
 --freeze-backbone-epochs 
@@ -51,7 +53,7 @@ Flags I use that I have added:
 
 --original-input (170 vector input without assigned species token)
 
---> if not present and not --species-lm-embedded --> uses one hot only first weights never loaded
+--> if not present and not --species-lm-embedded --> uses one hot only, first weights never loaded
 
 --entire-chromosome (windows tiling the entire chromosome)
 --peak-centered (windows centred on summits read from column 10 of the peak and non-peak bed files) 
