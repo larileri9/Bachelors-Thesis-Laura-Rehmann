@@ -5,7 +5,7 @@
 Changes:
 
 train.py --> bed file opening for peaks and non peaks
-shorkie_atac.py --> idk grade
+shorkie_atac.py --> input feature changes 
 atac_dataset_modified.py --> optional tiling for chromosomes, input feature decision, peak centering
 evaluate.py --> always tiles test chromosomes
 
@@ -22,6 +22,12 @@ Example scripts:
 - xxx.sh --> example script for evaluating multispecies
 
 --> training and evaluation of single species is conducted through the launchers 
+
+
+Configs:
+
+holdout_no_{species}.yaml --> multispecies without the one species mentioned in title (training) has the peaks and non peaks hardcoded
+holdout_singular.yaml --> used when one species is called for train or test, no explicit peaks encoded, those are given during training to the launcher (test doesn't need them)
 
 
 Flag list:

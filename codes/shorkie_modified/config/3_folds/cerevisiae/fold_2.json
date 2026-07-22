@@ -1,5 +1,0 @@
-{
-    "test": ["III", "IX", "X", "XIV", "XV", "XVI"],
-    "valid": ["II", "V", "VI", "VII", "VIII", "XII", "XIII"],
-    "train": ["I", "IV", "XI"]
-}
