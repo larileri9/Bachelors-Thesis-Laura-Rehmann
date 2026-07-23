@@ -8,7 +8,41 @@ per_chromosome_embeddings.py --> launch the per chromsome embedder, calling inst
 Species_lm_embeddings.py --> code I was given just the model class of the embedder wrapped
 
 
+FLAGS, per_chromosme_embeddings.py
 
+--fasta: genome fasta 
+--species: the species token handed to the tokenizer (_saccharomyces_cerevisiae for cerevisiae)
+--output-dir: one .pt per chromosome lands here (add species subduer in path)
+
+
+FIXED INTERNALLY, per_chromosme_embeddings.py
+
+chunk_size: 1000 = how many bases go into the model at once
+stride: 500 = how far the window shifts
+context_window: derived as (1000 - 500) // 2 = 250 --> changes with stride
+model_path: absolute path to the species_upstream_1000_k1 checkpoint
+kmer_size: 1 =  single bases rather than kmers
+device: cuda --> needs a gpu node
+padding base: N, 250 at each end of the chromosome and however many are needed to fill the last window
+output name: {chrom}.pt matching the fasta entry name 
+
+--> I did not change any configurations for the model only the tiling
+
+
+WORKFLOW, one species
+
+  1. call per_chromosme_embeddings.py once per species with its fasta, species token and output dir
+  2. script makes the output dir + the model and the tokenizer once (reuses them for everything)
+  3. inside: fasta is opened and every entry in it looped --> per chromosome if .pt is alerady there --> skip
+  4. whole chromosome sequence is fetched as a string + 250 N are added at each end
+  5. window slides along the padded sequence in steps of 500 each window is padded_seq[i : i+1000] and if sequence ends is filled with N to 1000
+  6. the window and the species token go into the tokenizer (batch dimnsion is added by hand)
+  7. the window is run through the model with a hook on the encoder block we want --> activations get captured as the forward pass goes through it
+  8. the model output is discarded, only the captured activation is used (1003 rows come back, row 0 = classification token, row 1 = species token,
+     last row = separator. --> all are cut leaving the 1000 base rows (768 x 1000)
+  9. only the middle 500 rows are kept, emb[250:750]
+ 10. on the last window only we cut window so nothing past the chromosome end gets saved
+ 11. .pt written
 
 
 # -------   make_replicate_tobias_bigwigs.py: ------------- --> has to be run explicitely
