@@ -32,15 +32,16 @@ Workflow / Order of calling:
 
 Dependency:
 
-step 0	prerequisites 	file preparation
-(step 0.5 --> make kfold folds with any launcher)
-step 1	run chrombpnet	needs to run for bigwig / peaks + non peaks 
-step 2	run embeddings	only if embeddings are used
-step 3	tobias bigwigs	needs 1 for Tobias bigwigs
-step 4	training	needs 0 - 3  depending on model and bigwig
-step 5 	evaluation      needs 4
-step 6 	chrombpnet      needs 2 for tobias
-
+```
+step 0    prerequisites     file preparation
+step 0.5  kfold folds       made by whichever launcher runs first
+step 1    run chrombpnet    gives the bigwigs, peaks and non peaks
+step 2    run embeddings    only if embeddings are used
+step 3    tobias bigwigs    needs 1
+step 4    training          needs 0 to 3 depending on model and bigwig
+step 5    evaluation        needs 4
+step 6    chrombpnet        needs 3 for tobias
+```
 
 --> all models done
 
