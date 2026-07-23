@@ -41,6 +41,7 @@ step 4	training	needs 0 - 3  depending on model and bigwig
 step 5 	evaluation      needs 4
 step 6 	chrombpnet      needs 2 for tobias
 
+
 --> all models done
 
 
