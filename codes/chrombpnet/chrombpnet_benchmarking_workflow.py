@@ -92,7 +92,8 @@ def get_test_chroms(args, fold):
 
 # if we ran the per replicate atacorrect here are the genome beds to use
 def construct_genome_bed_path(species_input_files, species):
-    return Path(species_input_files) / "genome_beds" / f"{species}_genome.bed"
+    species_name = utils.construct_species_short(species)
+    return Path(species_input_files) / "genome_beds" / f"{species_name}_genome.bed"
 
 # which folds to run? same logic as eval launcher find the fold json for that fold in the chrombpnte_data_kfold
 def compute_fold_indices(args, chrom_sizes_file):

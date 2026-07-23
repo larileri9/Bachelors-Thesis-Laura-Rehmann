@@ -22,7 +22,7 @@ Flags:
 --seq-length: window length used for tiling
 --config: shorkie config yaml. Replaced by the per fold config when kfold is on
 --params: shorkie_params.json
---skip-edges: tiling runs from skip_edges to chrom_len minus skip_edges (here fixed because chrombpnet doesn't predict them)
+--skip-edges: tiling runs from skip_edges to chrom_len minus skip_edges (here fixed because chrombpnet doesnt predict them)
 --kfold: evaluates the leave one chromosome out setup and sets test species to train species
 --run-fold: evaluates one fold index instead of all of them
 --overwrite: reruns folds that already have results.npz and metrics.json
@@ -43,16 +43,16 @@ kmer_len: read from the pkl
 
 
 
-BOTH, ALWAYS
+Both:
   1. args are parsed and with kfold the test species is set to the train species
   2. logs dir creation + bigwig dir for the test species is built and checked
   3. for embeddings: embedding dir for test species is checked
   4. output dir built, skipped if results are already there and overwrite is off
 
 
-1. BASELINES (gc, gc_kmer, embeddings)
+1. Baselines (gc, gc_kmer, embeddings)
 
-   BOTH MODES
+   Both
      1. test species genome found by trying .fna then .fa + fold json read for the test chroms
      2. get trained .pkl for this model and train species 
      3. command built from .pkl + genome + bigwigs + output dir + seq length + skip edges + test chroms
@@ -65,20 +65,20 @@ BOTH, ALWAYS
     10. predictions and targets stacked into windows by positions
     11. metrics and results file written with the same keys shorkie uses
 
-   A) NON KFOLD
+   A) Non kfold
      1. one pass and no fold anywhere in the paths
      2. fold json is fold_0 of the chrombpnet folds and test chroms are the test split of that fold
 
-   B) KFOLD
+   B) kfold
      1. test species is the train species so this stays inside one speices
      2. with a given fold index that one fold runs alone (--run-fold), without one the chrom sizes are checked and the folds are checked and if they dontt exist are written
      3. fold json is the loco one for the fold
      4. test chroms are the single held out chrom and fold goes into the .pkl path and into the output dir
 
 
-2. SHORKIE (shorkie, shorkie_scratch)
+2. Shorkie (shorkie, shorkie_scratch)
 
-   BOTH MODES
+   Both
      1. config and params checked
      2. checkpoint dir for this model and train species built and checked
      3. checkpoints searched recursively --> lowest loss wins
@@ -88,11 +88,11 @@ BOTH, ALWAYS
      7. dataset built always with whole chromosome tiling so the windows match what the baselines get
      9. every window predicted+  metrics and results file written
 
-   A) NON KFOLD
+   A) Non kfold
      1. one pass and no fold anywhere in the paths
      2. config is the one passed in (holdout_singular.yaml)and test chroms come out of that config instead of a fold json
 
-   B) KFOLD
+   B) Kfold
      1. test species is the train species
      2. with a given fold index (--run-fold) that fold runs, without the chrom sizes are checked and the folds are checked and made if they dont exist
      3. config is the loco one for the fold so the held out chrom changes per fold

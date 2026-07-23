@@ -9,8 +9,10 @@
 # train_benchmark_utils.py // some utils for paths etc 
 
 
+Quick note: to run merged bigwigs I always simply renamed the merged bigwig output file from chrombpnet into one of the replicates of that organism so the config recognizes it, there is no separate merged mode...
 
-Flags that can be adjusted when running
+
+Flags that can be adjusted when running:
 
 --model: thats the model types that are valid  (gc, gc_kmer, embeddings, shorkie, shorkie_scratch)
 --species: full name with underscore and shortened internally
